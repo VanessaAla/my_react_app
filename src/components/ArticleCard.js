@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function ArticleCard(props) {
+export default function ArticleCard({ title, content }) {
   return (
     <div className="Article">
-      <h2>{props.title}</h2>
-      <p>{props.content}</p>
+      <h2>{title}</h2>
+      <p>{content}</p>
     </div>
   );
 }

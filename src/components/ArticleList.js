@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ArticleCard from "./ArticleCard";
 
 export default function ArticleList() {
   const [articles, set_articles] = useState([
@@ -21,10 +22,19 @@ export default function ArticleList() {
     },
   ]);
 
+  const clearText = () => {
+    console.log("text test:");
+  };
+
   return (
-    <div>
+    <div className="App">
+      <button type="button" onClick={clearText}>
+        Clear notification
+      </button>
       <p>Here's a lovely list of articles, for your reading pleasure:</p>
-      {/* TODO */}
+      {articles.map((article, index) => (
+        <ArticleCard title={article.title} content={article.body} />
+      ))}
     </div>
   );
 }
