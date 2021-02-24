@@ -9,6 +9,10 @@ export default function LikeCounter() {
     set_numLikes(numLikes + 1);
   };
 
+  const reset = () => {
+    set_numLikes(initial_numLikes);
+  };
+
   return (
     <div>
       <p>
