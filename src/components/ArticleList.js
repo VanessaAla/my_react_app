@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
+import timeout from "await-timeout";
 
 export default function ArticleList() {
   const [articles, set_articles] = useState([
@@ -22,14 +23,23 @@ export default function ArticleList() {
     },
   ]);
 
-  const clearText = () => {
-    console.log("text test:");
+  useEffect(() => {
+    async function waitForATimer() {
+      console.log("A");
+      await timeout.set(2000);
+      console.log("B");
+    }
+    waitForATimer();
+  }, []);
+
+  const removeArticle = () => {
+    set_articles([]);
   };
 
   return (
     <div className="App">
-      <button type="button" onClick={clearText}>
-        Clear notification
+      <button type="button" onClick={removeArticle}>
+        Clear notifications
       </button>
       <p>Here's a lovely list of articles, for your reading pleasure:</p>
       {articles.map((article, index) => (
