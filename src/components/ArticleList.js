@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 import timeout from "await-timeout";
+import axios from "axios";
 
 export default function ArticleList() {
   const [articles, set_articles] = useState([
