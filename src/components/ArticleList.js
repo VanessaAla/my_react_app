@@ -52,7 +52,11 @@ export default function ArticleList() {
       <p>Here's a lovely list of articles, for your reading pleasure:</p>
       {articles
         ? articles.map((article, index) => (
-            <ArticleCard title={article.title} content={article.body} />
+            <ArticleCard
+              key={index}
+              title={article.title}
+              content={article.body}
+            />
           ))
         : "loading..."}
     </div>
